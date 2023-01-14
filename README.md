@@ -69,7 +69,9 @@ default servering HTTP on :8081
 
 ## 📖 API Documentation <a name="doc"></a>
 
-- [https://go.dev/](https://go.dev/)
+See the API documentation for this application
+
+- [https://petstore.swagger.io/?url=https://raw.githubusercontent.com/lutfiharidha/sequis-test/master/docs/swagger.yaml](https://petstore.swagger.io/?url=https://raw.githubusercontent.com/lutfiharidha/sequis-test/master/docs/swagger.yaml)
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
