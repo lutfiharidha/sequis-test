@@ -47,6 +47,7 @@ DB_NAME= <Database Name>
 DB_USERNAME= <Database Username>
 DB_PASSWORD= <Database Password>
 ```
+Don't worry, you don't need to create a table for this application because this application will automatically create a table by itself. Just make sure your database is connected correctly.
 
 ## 🔧 Running the test <a name = "tests"></a>
 
