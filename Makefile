@@ -4,7 +4,7 @@ tidy:
 run: tidy
 	@go run main.go
 
-testing:
+testing: tidy
 	@go test -v ./test
 
 build: tidy
