@@ -35,11 +35,11 @@ A step by step series of examples that tell you how to get a development env run
 - Rename .env.example file to .env
 - Configuration database in .env file
 ```
-DB_HOST= <Database Host>
-DB_PORT= <Database Port>
-DB_NAME= <Database Name>
-DB_USERNAME= <Database Username>
-DB_PASSWORD= <Database Password>
+DB_HOST= //Database Host
+DB_PORT= //Database Port
+DB_NAME= //Database Name
+DB_USERNAME= //Database Username
+DB_PASSWORD= //Database Password
 ```
 Don't worry, you don't need to create a table for this application because this application will automatically create a table by itself. Just make sure your database is connected correctly.
 
