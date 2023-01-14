@@ -7,7 +7,7 @@ run: tidy
 testing:
 	@go test -v ./test
 
-build:
+build: tidy
 	@rm -rf ./bin
 	@sh -c 'CGO_LDFLAGS_ALLOW=${CGO_LDFLAGS_ALLOW} \
 	go build -tags "osusergo netgo" -v -ldflags="-s -w \
