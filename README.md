@@ -21,7 +21,7 @@
 
 ## 🧐 About <a name = "about"></a>
 
-For a social network application, friendship management is a common feature. The application will need features like friend request, approve or reject friend request, list friend requests, list friends, block friend, common friend between user.
+For a social network application, friendship management is a common feature. The application will need features like friend request, approve or reject friend request, list friend requests, list friends, block friend, common friend between users.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
