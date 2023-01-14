@@ -1,0 +1,258 @@
+definitions:
+  app.CommonRequest:
+    properties:
+      friends:
+        items:
+          type: string
+        type: array
+    required:
+    - friends
+    type: object
+  app.CommonResponse:
+    properties:
+      count:
+        type: integer
+      friends:
+        $ref: '#/definitions/app.ListResponse'
+      success:
+        type: boolean
+    type: object
+  app.FriendRequest:
+    properties:
+      requestor:
+        type: string
+      to:
+        type: string
+    required:
+    - requestor
+    - to
+    type: object
+  app.FriendResponse:
+    properties:
+      success:
+        type: boolean
+    type: object
+  app.FriendsRequestResponse:
+    properties:
+      requestator:
+        type: string
+      status:
+        type: string
+    type: object
+  app.ListFriendsRequestResponse:
+    properties:
+      requests:
+        items:
+          $ref: '#/definitions/app.FriendsRequestResponse'
+        type: array
+    type: object
+  app.ListRequest:
+    properties:
+      email:
+        type: string
+    required:
+    - email
+    type: object
+  app.ListResponse:
+    properties:
+      friends:
+        items:
+          type: string
+        type: array
+    type: object
+  helper.ResponseError:
+    properties:
+      errors: {}
+      message:
+        example: Failed to process request
+        type: string
+      success:
+        example: false
+        type: boolean
+    type: object
+host: localhost:8081
+info:
+  contact: {}
+  description: For a social network application, friendship management is a common
+    feature. The application will need features like friend request, approve or reject
+    friend request, list friend requests, list friends, block friend, common friend
+    between user.
+  title: Sequis-Test
+  version: "1.0"
+paths:
+  /api/v1/friend/approve:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: request data
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/app.FriendRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/app.FriendResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/helper.ResponseError'
+      summary: Approve friend request.
+      tags:
+      - Approve
+  /api/v1/friend/block:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: request data
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/app.FriendRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/app.FriendResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/helper.ResponseError'
+      summary: Block a friend.
+      tags:
+      - Block
+  /api/v1/friend/list:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: request data
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/app.ListRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/app.ListResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/helper.ResponseError'
+      summary: List friend.
+      tags:
+      - List Friend
+  /api/v1/friend/list/common:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: request data
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/app.CommonRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/app.CommonResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/helper.ResponseError'
+      summary: List common friend between users.
+      tags:
+      - List Common Friend
+  /api/v1/friend/list/request:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: request data
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/app.ListRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/app.ListFriendsRequestResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/helper.ResponseError'
+      summary: List friend request.
+      tags:
+      - List Friend Request
+  /api/v1/friend/reject:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: request data
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/app.FriendRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/app.FriendResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/helper.ResponseError'
+      summary: Reject friend request.
+      tags:
+      - Reject
+  /api/v1/friend/request:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: request data
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/app.FriendRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/app.FriendResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/helper.ResponseError'
+      summary: Request a friend.
+      tags:
+      - Request Friend
+swagger: "2.0"
