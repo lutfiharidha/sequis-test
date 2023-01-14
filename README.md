@@ -50,7 +50,6 @@ DB_PASSWORD= <Database Password>
 
 ## 🔧 Running the test <a name = "tests"></a>
 
-to run unit test
 ```
 make testing
 ```
@@ -61,11 +60,24 @@ The scenarios that have been created in the unit test include positive scenarios
 
 ## 🎈 Usage <a name="usage"></a>
 
+### Run without build
 to run the application use the following command
 ```
 make run
 ```
-default servering HTTP on :8081
+### Run with build
+
+to build the application use the following command
+```
+make build
+```
+
+and run it with command
+```
+./bin/app
+```
+default servering HTTP on port 8081
+
 
 ## 📖 API Documentation <a name="doc"></a>
 
